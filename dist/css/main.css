@@ -1,11 +1,18 @@
 img {
   max-width: 100%;
+  display: block;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #fffbf8;
+  line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -45,7 +52,7 @@ img {
   top: 50%;
   left: 0;
   transform: translateY(-50%) translateX(0px);
-  transition: transform 0.5s ease-in-out, opacity 0.3s 0.3s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 1s ease-in-out;
 }
 .hamburger .line--bottom {
   position: absolute;
@@ -142,7 +149,7 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: url("../images/mobile/image-header.jpg") center/cover no-repeat;
 }
 .banner--heading {
@@ -156,14 +163,164 @@ img {
   height: 124px;
 }
 .banner .arrow__img {
+  transition: opacity 0.8s ease;
   animation: arrowBlink 1s alternate infinite;
 }
 
-/* 
-    hidding spans
-    styles from  https://a11y-101.com
-*/
-.hidden {
+.about__text {
+  text-align: center;
+  padding: 2rem;
+}
+.about__heading {
+  margin-bottom: 1rem;
+  color: #23303e;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.about__paragraph {
+  margin-bottom: 1rem;
+  color: #818498;
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+}
+.about__link {
+  position: relative;
+  text-decoration: none;
+  color: #23303e;
+  font-weight: 900;
+  font-family: "Fraunces", serif;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+.red--underline::before,
+.yellow--underline::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 110%;
+  transform: translateX(-5%);
+  border-radius: 20px;
+  opacity: 0.2;
+  height: 10px;
+  z-index: -1;
+}
+
+.red--underline::before {
+  background-color: #fe7867;
+}
+
+.yellow--underline::before {
+  background-color: #fad400;
+}
+
+.graphic--card,
+.photography--card {
+  position: relative;
+}
+.graphic--card .about__text,
+.photography--card .about__text {
+  position: absolute;
+  bottom: 16px;
+}
+
+.graphic--card .about__heading,
+.graphic--card .about__paragraph {
+  color: #25564b;
+}
+
+.photography--card .about__heading,
+.photography--card .about__paragraph {
+  color: #19536b;
+}
+
+.testimonials {
+  text-align: center;
+  padding: 2rem;
+}
+.testimonials--heading {
+  color: #a7abae;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1rem;
+  padding: 1rem 0 2rem 0;
+  font-weight: 900;
+}
+.testimonials__card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.testimonials__img {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+.testimonials__paragraph {
+  color: #5a636c;
+  font-family: "Barlow", sans-serif;
+  padding: 2rem 0;
+}
+.testimonials__author {
+  margin-bottom: 2rem;
+}
+.testimonials__name {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  color: #23303e;
+}
+.testimonials__job {
+  color: #a7abae;
+  font-size: 0.9rem;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.footer {
+  position: relative;
+  background-color: #90d4c5;
+  color: #25564b;
+  padding: 2rem;
+}
+.footer__logo {
+  margin-bottom: 2rem;
+}
+.footer__logo img {
+  margin: 0 auto;
+}
+.footer__list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4rem;
+  list-style: none;
+}
+.footer__link {
+  text-decoration: none;
+  color: #25564b;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  margin: 0rem 5rem 1rem 5rem;
+  /* 
+      hidding spans
+      styles from  https://a11y-101.com
+  */
+}
+.social__link {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit;
+}
+.social .hidden {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
@@ -171,12 +328,25 @@ img {
   white-space: nowrap;
   width: 1px;
 }
-.hidden:focus {
+.social .hidden:focus {
   clip: auto;
   height: auto;
   overflow: auto;
   position: absolute;
   width: auto;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+}
+
+.attribution a {
+  color: #3e52a3;
 }
 
 @keyframes arrowBlink {

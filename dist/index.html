@@ -28,15 +28,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <header class="header">
@@ -97,7 +88,7 @@
               brands grow fast. Engage your clients through compelling visuals
               that do most of the marketing for you.
             </p>
-            <a href="#" class="about__link">Learn more</a>
+            <a href="#" class="about__link yellow--underline">Learn more</a>
           </div>
         </div>
 
@@ -126,7 +117,7 @@
               photographers, videographers, and copywriters, we’ll build and
               extend your brand in digital places.
             </p>
-            <a href="#" class="about__link">Learn more</a>
+            <a href="#" class="about__link red--underline">Learn more</a>
           </div>
         </div>
 
@@ -182,49 +173,61 @@
       </section>
 
       <section class="testimonials">
-        <h2 class="heading heading--testimonial">Client testimonials</h2>
+        <h2 class="heading testimonials--heading">Client testimonials</h2>
 
         <div class="testimonials__cards">
           <div class="testimonials__card">
-            <div class="testimonial__img">
-              <img src="./images/image-emily.jpg" alt="photo of Emily" />
+            <div>
+              <img
+                src="./images/image-emily.jpg"
+                alt="photo of Emily"
+                class="testimonials__img"
+              />
             </div>
-            <p class="testimonial__paragraph">
+            <p class="testimonials__paragraph">
               We put our trust in Sunnyside and they delivered, making sure our
               needs were met and deadlines were always hit.
             </p>
 
-            <div class="testimonial__author">
-              <p class="testimonial__name">Emily R.</p>
-              <p class="testimonial__job">Marketing Director</p>
+            <div class="testimonials__author">
+              <p class="testimonials__name">Emily R.</p>
+              <p class="testimonials__job">Marketing Director</p>
             </div>
           </div>
           <div class="testimonials__card">
-            <div class="testimonial__img">
-              <img src="./images/image-thomas.jpg" alt="photo of Thomas" />
+            <div>
+              <img
+                src="./images/image-thomas.jpg"
+                alt="photo of Thomas"
+                class="testimonials__img"
+              />
             </div>
-            <p class="testimonial__paragraph">
+            <p class="testimonials__paragraph">
               Sunnyside’s enthusiasm coupled with their keen interest in our
               brand’s success made it a satisfying and enjoyable experience.
             </p>
 
-            <div class="testimonial__author">
-              <p class="testimonial__name">Thomas S.</p>
-              <p class="testimonial__job">Chief Operating Officer</p>
+            <div class="testimonials__author">
+              <p class="testimonials__name">Thomas S.</p>
+              <p class="testimonials__job">Chief Operating Officer</p>
             </div>
           </div>
           <div class="testimonials__card">
-            <div class="testimonial__img">
-              <img src="./images/image-thomas.jpg" alt="photo of Thomas" />
+            <div>
+              <img
+                src="./images/image-jennie.jpg"
+                alt="photo of Thomas"
+                class="testimonials__img"
+              />
             </div>
-            <p class="testimonial__paragraph">
+            <p class="testimonials__paragraph">
               Incredible end result! Our sales increased over 400% when we
               worked with Sunnyside. Highly recommended!
             </p>
 
-            <div class="testimonial__author">
-              <p class="testimonial__name">Jennie F.</p>
-              <p class="testimonial__job">Business Owner</p>
+            <div class="testimonials__author">
+              <p class="testimonials__name">Jennie F.</p>
+              <p class="testimonials__job">Business Owner</p>
             </div>
           </div>
         </div>
@@ -294,7 +297,9 @@
     </main>
 
     <footer class="footer">
-      <h3 class="heading footer--heading">sunnyside</h3>
+      <div class="footer__logo">
+        <img src="./images/logo-footer.svg" alt="" />
+      </div>
       <nav class="footer__nav">
         <ul class="footer__list">
           <li class="footer__item">
@@ -305,9 +310,6 @@
           </li>
           <li class="footer__item">
             <a href="#" class="footer__link">Projects</a>
-          </li>
-          <li class="footer__item">
-            <a href="#" class="footer__link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -334,7 +336,7 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Chris Bailey</a>.
       </div>
     </footer>
 

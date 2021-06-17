@@ -95,7 +95,7 @@ body {
   transform: translateX(-50%) scale(1, 0);
   text-align: center;
   font-family: "Barlow", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   opacity: 0;
   transform-origin: top;
   transition: transform 0.8s 0.1s ease-in-out, opacity 0.8s ease-in-out;
@@ -120,6 +120,7 @@ body {
 .nav__link {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 .nav::before {
   content: "";
@@ -153,8 +154,9 @@ body {
   background: url("../images/mobile/image-header.jpg") center/cover no-repeat;
 }
 .banner--heading {
-  width: 80%;
-  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 2.8rem;
   color: white;
   text-align: center;
   margin-bottom: 2rem;
@@ -191,6 +193,7 @@ body {
   font-family: "Fraunces", serif;
   z-index: 100;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .red--underline::before,
@@ -205,6 +208,7 @@ body {
   opacity: 0.2;
   height: 10px;
   z-index: -1;
+  transition: opacity 0.4s ease;
 }
 
 .red--underline::before {
@@ -303,6 +307,7 @@ body {
 .footer__link {
   text-decoration: none;
   color: #25564b;
+  transition: color 0.4s ease;
 }
 
 .social {
@@ -319,6 +324,7 @@ body {
   cursor: pointer;
   font-size: 1.2rem;
   color: inherit;
+  transition: color 0.4s ease;
 }
 .social .hidden {
   clip: rect(1px, 1px, 1px, 1px);
@@ -346,9 +352,178 @@ body {
 }
 
 .attribution a {
-  color: #3e52a3;
+  font-family: "Barlow", sans-serif;
+  color: #25564b;
 }
 
+@media (min-width: 768px) {
+  .banner {
+    background: url("../images/desktop/image-header.jpg") center/cover no-repeat;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, min-content);
+  }
+  .about__img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .transform--card {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+  }
+  .transform--card .about__text {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+  }
+  .transform--card .about__img {
+    grid-column: 2/3;
+  }
+
+  .standout--card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+
+  .graphic--card .about__text,
+.photography--card .about__text {
+    position: absolute;
+    bottom: -40px;
+  }
+
+  .testimonials {
+    padding: 2rem 4rem;
+  }
+
+  .testimonials__cards {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .testimonials__card {
+    margin: 0 0.5rem;
+  }
+
+  .images {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer {
+    padding: 2rem 14rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 1rem;
+  }
+
+  .nav {
+    all: unset;
+    width: 50%;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+  }
+  .nav::before {
+    all: unset;
+  }
+  .nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nav__item {
+    margin: 0 1rem;
+    color: white;
+  }
+  .nav__item:last-child {
+    color: #23303e;
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    background-color: white;
+    width: min-content;
+    border-radius: 30px;
+    padding: 0.5rem 0.7rem;
+    margin: 0 1rem;
+    transition: background-color 0.3s ease, color 0.3s 0.1s ease;
+  }
+
+  .about__text,
+.about__paragraph {
+    text-align: left;
+    place-self: center;
+  }
+
+  .graphic--card .about__paragraph,
+.photography--card .about__paragraph {
+    text-align: center;
+  }
+  .graphic--card .about__text,
+.photography--card .about__text {
+    text-align: center;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .footer {
+    padding: 2rem 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .transform--card .about__text {
+    margin-left: 150px;
+    margin-right: 50px;
+  }
+
+  .standout--card .about__text {
+    margin-right: 150px;
+    margin-left: 50px;
+  }
+
+  .graphic--card .about__paragraph,
+.photography--card .about__paragraph {
+    padding: 0 10rem;
+  }
+
+  .testimonials {
+    padding: 8rem;
+  }
+
+  .footer {
+    padding: 2rem 30rem;
+  }
+}
+@media (pointer: fine) {
+  .nav__item:last-child:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .yellow--underline:hover::before {
+    opacity: 1;
+  }
+
+  .red--underline:hover::before {
+    opacity: 1;
+  }
+
+  .attribution a:hover,
+.footer__link:hover,
+.social__link:hover {
+    color: white;
+  }
+}
 @keyframes arrowBlink {
   0% {
     height: 114px;

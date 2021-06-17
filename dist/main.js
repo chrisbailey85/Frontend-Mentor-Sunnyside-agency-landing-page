@@ -30,3 +30,5 @@ function arrrowScroll() {
         behavior: 'smooth'
     });
 }
+let viewport = window.innerHeight;
+console.log(viewport)

@@ -60,6 +60,9 @@ body {
   left: 0;
   transition: transform 0.5s ease-in-out;
 }
+.hamburger:focus {
+  outline: dotted white 2px;
+}
 
 .hamburger.open .line--top {
   position: absolute;
@@ -107,7 +110,7 @@ body {
   margin: 1.5rem 0;
   color: #818498;
 }
-.nav__item:last-child {
+.nav__item:last-child .nav__link {
   color: #5a636c;
   text-transform: uppercase;
   font-family: "Fraunces", serif;
@@ -117,10 +120,17 @@ body {
   padding: 0.8rem 1.2rem;
   margin: 1.5rem auto;
 }
+.nav__item:last-child .nav__link:focus {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
 .nav__link {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+.nav__link:focus {
+  outline: dotted white 2px;
 }
 .nav::before {
   content: "";
@@ -219,6 +229,14 @@ body {
   background-color: #fad400;
 }
 
+.red--underline:focus {
+  outline: dotted #fe7867 2px;
+}
+
+.yellow--underline:focus {
+  outline: dotted #fad400 2px;
+}
+
 .graphic--card,
 .photography--card {
   position: relative;
@@ -309,6 +327,10 @@ body {
   color: #25564b;
   transition: color 0.4s ease;
 }
+.footer__link:focus {
+  outline: dotted white 2px;
+  color: white;
+}
 
 .social {
   display: flex;
@@ -325,6 +347,10 @@ body {
   font-size: 1.2rem;
   color: inherit;
   transition: color 0.4s ease;
+}
+.social__link:focus {
+  outline: dotted white 2px;
+  color: white;
 }
 .social .hidden {
   clip: rect(1px, 1px, 1px, 1px);
@@ -354,6 +380,10 @@ body {
 .attribution a {
   font-family: "Barlow", sans-serif;
   color: #25564b;
+}
+.attribution a:focus {
+  outline: dotted white 2px;
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -447,7 +477,7 @@ body {
     margin: 0 1rem;
     color: white;
   }
-  .nav__item:last-child {
+  .nav__item:last-child .nav__link {
     color: #23303e;
     text-transform: uppercase;
     font-family: "Fraunces", serif;

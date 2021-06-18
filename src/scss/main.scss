@@ -59,6 +59,9 @@ body {
       transition: transform 0.5s ease-in-out;
     }
   }
+  &:focus {
+    outline: dotted colors.$white 2px;
+  }
 }
 
 .hamburger.open {
@@ -108,7 +111,7 @@ body {
   &__item {
     margin: 1.5rem 0;
     color: colors.$dark-grayish-blue;
-    &:last-child {
+    &:last-child .nav__link {
       color: colors.$very-dark-grayish-blue;
       text-transform: uppercase;
       font-family: "Fraunces", serif;
@@ -117,12 +120,19 @@ body {
       border-radius: 30px;
       padding: 0.8rem 1.2rem;
       margin: 1.5rem auto;
+      &:focus {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
     }
   }
   &__link {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    &:focus {
+      outline: dotted colors.$white 2px;
+    }
   }
 
   &::before {
@@ -199,6 +209,7 @@ body {
     cursor: pointer;
   }
 }
+
 .red--underline::before,
 .yellow--underline::before {
   content: "";
@@ -221,6 +232,12 @@ body {
   background-color: colors.$yellow;
 }
 
+.red--underline:focus {
+  outline: dotted colors.$soft-red 2px;
+}
+.yellow--underline:focus {
+  outline: dotted colors.$yellow 2px;
+}
 .graphic--card,
 .photography--card {
   position: relative;
@@ -321,6 +338,10 @@ body {
     text-decoration: none;
     color: colors.$graphic-design-text;
     transition: color 0.4s ease;
+    &:focus {
+      outline: dotted colors.$white 2px;
+      color: colors.$white;
+    }
   }
 }
 
@@ -335,6 +356,11 @@ body {
     font-size: 1.2rem;
     color: inherit;
     transition: color 0.4s ease;
+
+    &:focus {
+      outline: dotted colors.$white 2px;
+      color: colors.$white;
+    }
   }
   /* 
       hidding spans
@@ -368,6 +394,10 @@ body {
 .attribution a {
   font-family: "Barlow", sans-serif;
   color: colors.$graphic-design-text;
+  &:focus {
+    outline: dotted colors.$white 2px;
+    color: colors.$white;
+  }
 }
 
 @media (min-width: 768px) {
@@ -456,7 +486,7 @@ body {
     &__item {
       margin: 0 1rem;
       color: colors.$white;
-      &:last-child {
+      &:last-child .nav__link {
         color: colors.$very-dark-desaturated-blue;
         text-transform: uppercase;
         font-family: "Fraunces", serif;
